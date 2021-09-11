@@ -57,7 +57,7 @@ namespace EventSourcing.EventStore
 
                 if (eventsSlice.Status == SliceReadStatus.Success)
                 {
-                    if (aggregate == default)
+                    if (aggregate == null)
                     {
                         aggregate = (TAggregateRoot)Activator.CreateInstance(typeof(TAggregateRoot), id);
                     }
